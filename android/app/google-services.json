@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "432369063180",
+    "project_id": "saha-yatri-d87a7",
+    "storage_bucket": "saha-yatri-d87a7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432369063180:android:e7511b952d754fd0f32529",
+        "android_client_info": {
+          "package_name": "com.example.saha_yatri"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaLinsOaUhap_vidOsea1iUfgtGoRsbSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432369063180:android:167bc7a65bd70f9df32529",
+        "android_client_info": {
+          "package_name": "com.saha_yatri_guides.saha_yatri_guides"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaLinsOaUhap_vidOsea1iUfgtGoRsbSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
