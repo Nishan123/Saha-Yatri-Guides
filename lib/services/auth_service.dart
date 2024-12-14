@@ -23,43 +23,43 @@ class AuthService {
     );
   }
 
- Future<void> login(BuildContext context, String email, String password) async {
-  try {
-    UserCredential userCredential = await FirebaseAuth.instance
-        .signInWithEmailAndPassword(email: email, password: password);
-    
-    showToast("Login successful!", Colors.green, Colors.white);
-    debugPrint("User signed in: ${userCredential.user?.email}");
-  } on FirebaseAuthException catch (e) {
-    String message = '';
-    switch (e.code) {
-      case "invalid-email":
-        message = "Invalid email! Check again.";
-        break;
-      case "wrong-password":
-        message = "Incorrect password. Please try again.";
-        break;
-      case "user-not-found":
-        message = "No user found with this email.";
-        break;
-      case "user-disabled":
-        message = "User account has been disabled.";
-        break;
-      case "network-request-failed":
-        message = "Network error. Please check your internet connection.";
-        break;
-      default:
-        message = "An unknown error occurred. Please try again.";
-        break;
-    }
-    showToast(message, Colors.red, Colors.white);
-    debugPrint("FirebaseAuthException: ${e.code}");
-  } catch (e) {
-    showToast("An error occurred: ${e.toString()}", Colors.red, Colors.white);
-    debugPrint("Error: ${e.toString()}");
-  }
-}
+  Future<void> login(
+      BuildContext context, String email, String password) async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
 
+      showToast("Login successful!", Colors.green, Colors.white);
+      debugPrint("User signed in: ${userCredential.user?.email}");
+    } on FirebaseAuthException catch (e) {
+      String message = '';
+      switch (e.code) {
+        case "invalid-email":
+          message = "Invalid email! Check again.";
+          break;
+        case "wrong-password":
+          message = "Incorrect password. Please try again.";
+          break;
+        case "user-not-found":
+          message = "No user found with this email.";
+          break;
+        case "user-disabled":
+          message = "User account has been disabled.";
+          break;
+        case "network-request-failed":
+          message = "Network error. Please check your internet connection.";
+          break;
+        default:
+          message = "An unknown error occurred. Please try again.";
+          break;
+      }
+      showToast(message, Colors.red, Colors.white);
+      debugPrint("FirebaseAuthException: ${e.code}");
+    } catch (e) {
+      showToast("An error occurred: ${e.toString()}", Colors.red, Colors.white);
+      debugPrint("Error: ${e.toString()}");
+    }
+  }
 
 // logout function
   Future<void> logOut() async {
@@ -99,9 +99,9 @@ class AuthService {
       await _firestore.collection("users").doc(userCredential.user!.uid).set({
         'uid': userCredential.user!.uid,
         'email': email,
-        'profilePic':"",
-        'user':'guide',
-        'year_of_exp':"",
+        'profilePic': "",
+        'user': 'user',
+        'year_of_exp': "",
         'username': username,
         'phone': "98........"
       });
